@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  appname:
+    container_name: appname
+    build: .
+    image: app_image_name:0.0.1
+    restart: unless-stopped
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    external: true  
